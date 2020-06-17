@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.header {
+  height: 450px;
+  width: 100%;
+  &__main {
+    height: 340px;
+    width: 100%;
+    &--pic {
+      height: 100%;
+      width: 100%;
+      background-image: image-url('material/top-page/i.No-main5.jpeg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 67%;
+      display: flex;
+      justify-content: space-between;
+      .appLogo {
+        // background-color: blanchedalmond;
+        height: 80%;
+        width: 40%;
+        margin-left: 40px;
+        &__main {
+          height: 100%;
+          width: 100%;
+        }
+      }
+      .user-navi {
+        height: 60px;
+        width: 20%;
+        padding-left: 20px;
+        margin-top: 3px;
+        display: flex;
+        &__login {
+          background: linear-gradient(#66cccc, #009999);
+          width: 62px;
+          margin-right: 5px;
+          border-radius: 3px;
+          .fas {
+            color: blanchedalmond;
+            font-size: 25px;
+            padding-left: 15px;
+            padding-top: 5px;
+          }
+          .text {
+            color: blanchedalmond;
+            font-size: 15px;
+          }
+        }
+        &__new {
+          background: linear-gradient(#66cccc, #009999);
+          width: 62px;
+          margin-right: 5px;
+          border-radius: 3px;
+          .fas {
+            color: blanchedalmond;
+            font-size: 25px;
+            padding-left: 15px;
+            padding-top: 5px;
+          }
+          .text {
+            color: blanchedalmond;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+  &__search-bar {
+    background-color: blanchedalmond;
+    height: 110px;
+    width: 100%;
+    .search-navi {
+      width: 940px;
+      height: 90px;
+      margin: auto;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      &__ageo {
+        background-color: white;
+        height: 60px;
+        width: 20%;
+        text-align: center;
+        border-radius: 2px;
+        &--text {
+          padding-top: 15px;
+          font-size: 25px;
+        }
+      }
+      &__town {
+        background-color: white;
+        height: 60px;
+        width: 50%;
+        text-align: center;
+        border-radius: 2px;
+        &--text {
+          padding-top: 15px;
+          font-size: 25px;
+        }
+      }
+      &__searchBtn {
+        background: linear-gradient(#66cccc, #009999);
+        height: 60px;
+        width: 25%;
+        text-align: center;
+        border-radius: 2px;
+        &--text {
+          color: white;
+          padding-top: 15px;
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}
