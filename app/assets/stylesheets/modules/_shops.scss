@@ -53,7 +53,7 @@
     }
   }
   &__features {
-    background-color: blanchedalmond;
+    background-color: white;
     height: 500px;
     width: 100%;
     &--title {
@@ -79,25 +79,32 @@
         display: flex;
         justify-content: space-between;
         .points-box {
-          background-color: blue;
           width: 30%;
           height: 100%;
+          text-align: center;
           &__pic {
-            background-color: white;
-            height: 60%;
+            // background-color: black;
+            height: 65%;
+            .png {
+              height: 100%;
+              width: 100%;
+            }
           }
           &__text1 {
-
+            padding-top: 10px;
+            font-size: 25px;
+            font-weight: bold;
           }
           &__text2 {
-
+            padding: 8px 20px;
+            font-size: 15px;
           }
         }
       }
     }
   }
   &__pickup {
-    background-color: white;
+    background-color: blanchedalmond;
     height: 500px;
     width: 100%;
     &--title {
