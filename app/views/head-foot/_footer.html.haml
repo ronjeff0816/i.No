@@ -1,0 +1,44 @@
+.TP-footer
+  %ul.TP-footer__inner
+    %li.TP-footer__inner__contents
+      %h2.TP-footer__inner__contents--head 
+        i.Noについて
+      %ul
+        %li
+          = link_to '', class: 'TP-footer__inner__contents--list' do
+            会社概要 (運営会社)
+        %li
+          = link_to '', class: 'TP-footer__inner__contents--list' do
+            プライバシーポリシー
+        %li
+          = link_to '', class: 'TP-footer__inner__contents--list' do
+            i.No利用規約
+    %li.TP-footer__inner__contents
+      %h2.TP-footer__inner__contents--head 
+        i.Noを見る
+      %ul
+        %li
+          = link_to '', class: 'TP-footer__inner__contents--list' do
+            エリア一覧
+        %li
+          = link_to '', class: 'TP-footer__inner__contents--list' do
+            ジャンル一覧
+        %li
+          .TP-footer__inner__contents--list
+            © i.No
+    %li.TP-footer__inner__contents
+      %h2.TP-footer__inner__contents--head 
+        ヘルプ&ガイド
+      %ul
+        %li
+          = link_to '', class: 'TP-footer__inner__contents--list' do
+            i.Noガイド
+        %li
+          = link_to '', class: 'TP-footer__inner__contents--list' do
+            i.Noロゴ利用ガイドライン
+        %li
+          = link_to '', class: 'TP-footer__inner__contents--list' do
+            お知らせ
+  .TP-footer__logo
+    = link_to '' do
+      = image_tag 'material/icon/logo_transparent.png', alt:'TopPageFooterIcon', class: 'TP-footer__logo--iNo'
