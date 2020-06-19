@@ -1,5 +1,6 @@
 = link_to '' do
   .TP-purchaseBtn 
-    %span.TP-purchaseBtn__text
-      店舗管理
-    = image_tag 'material/icon/restaurant-icon.png', alt: 'sellItemBtn', class: 'TP-purchaseBtn__icon'
+    = link_to edit_user_path(current_user) do
+      %span.TP-purchaseBtn__text
+        店舗管理
+        = image_tag 'material/icon/restaurant-icon.png', alt: 'sellItemBtn', class: 'TP-purchaseBtn__icon'
