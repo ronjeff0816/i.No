@@ -18,6 +18,15 @@
       .search-navi__ageo
         .search-navi__ageo--text Ageo
       .search-navi__town
+        %select.search-navi__town--options
+          %option= "エリアで検索"
+          %option= "上尾下"
+          %option= "上尾宿"
+          %option= "上尾村"
+          %option= "浅間台"
+          %option= "東町"
+          %option= "畔吉"
+          %option= "愛宕"
       .search-navi__shop
         %form.search-navi__shop--form
           %input.search-navi__shop--searchBox{ :name => 'Search', :placeholder => '店名・ジャンルから探す'}

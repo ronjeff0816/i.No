@@ -91,9 +91,13 @@
         }
       }
       &__town {
-        background-color: black;
         width: 27%;
         height: 60px;
+        &--options {
+          height: 100%;
+          width: 100%;
+          padding-left: 10px;
+        }
       }
       &__shop {
         background-color: white;
