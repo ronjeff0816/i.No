@@ -35,7 +35,7 @@
         display: flex;
         &__login {
           background: linear-gradient(#66cccc, #009999);
-          width: 62px;
+          width: 70px;
           margin-right: 5px;
           border-radius: 3px;
           .fas {
@@ -46,12 +46,12 @@
           }
           .text {
             color: blanchedalmond;
-            font-size: 15px;
+            font-size: 13px;
           }
         }
         &__new {
           background: linear-gradient(#66cccc, #009999);
-          width: 62px;
+          width: 70px;
           margin-right: 5px;
           border-radius: 3px;
           .fas {
@@ -62,7 +62,7 @@
           }
           .text {
             color: blanchedalmond;
-            font-size: 15px;
+            font-size: 13px;
           }
         }
       }

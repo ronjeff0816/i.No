@@ -8,11 +8,17 @@
         = link_to "#" do
           .user-navi__login
             = icon("fas", "sign-in-alt")
-            .text ログイン
+            -if user_signed_in? 
+              .text ログアウト
+            -else 
+              .text ログイン
         = link_to "#" do
           .user-navi__new
             = icon("fas", "user-plus")
-            .text 新規登録
+            -if user_signed_in?
+              .text マイページ
+            -else 
+              .text 新規登録
   .header__search-bar
     .search-navi
       .search-navi__ageo
