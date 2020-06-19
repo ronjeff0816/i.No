@@ -10,11 +10,7 @@
         .field
           .field-label
             .field-label__up
-              .p
-                = f.label :氏名
-              .p
-                .field-label__up--extraText
-                  (店舗管理者の場合は店舗名を入力してください)
+              = f.label :ユーザーネーム
             .field-label__down
               .field-label__down--must 必須
           .field-input
@@ -49,8 +45,12 @@
             = f.password_field :password_confirmation, autocomplete: "off"
         .field
           .field-label
-            = f.label :店舗管理者パスワード
-            %i (i.Noから発行されたパスワードを入力)
+            .field-label__up
+              .p
+                = f.label :店舗管理者コード
+              .p
+                .field-label__up--extraText
+                  (店舗管理者の場合はi.Noから発行されたコードを入力)
           .field-input
             = f.password_field :owner_password, autocomplete: "off"
         .actions
