@@ -1,0 +1,77 @@
+.main 
+  .main__appBanner1
+    .banner
+      .banner__text1
+        営業中を検索
+      .banner__text2
+        i.Noは飲食店の営業状況を検索できるアプリです。
+      .banner__logo
+        .banner__logo--apple
+          = link_to '#' do
+            = image_tag 'material/icon/AppStoreLogo.png', class: 'logoSize'
+        .banner__logo--google
+          = link_to '#' do
+            = image_tag 'material/icon/GooglePlayLogo.png', class: 'logoSize'
+  .main__features
+    .main__features--title
+      .title i.NOの特徴
+      .underline
+    .main__features--points
+      .points-boxes
+        .points-box
+          .points-box__pic
+            = image_tag 'material/icon/favShop.png', alt: 'topPage_favoriteIcon', class: 'png'
+          .points-box__text1 お気に入り店舗を保存
+          .points-box__text2
+            マイページからお気に入り店舗の営業状況をすぐに確認できる
+        .points-box
+          .points-box__pic
+            = image_tag 'material/icon/openShop.png', alt: 'topPage_favoriteIcon', class: 'png'
+          .points-box__text1 営業中を簡単に検索
+          .points-box__text2
+            時短営業や急な営業時間変更をリアルタイムで反映され、無駄な外出を避ける
+        .points-box
+          .points-box__pic
+            = image_tag 'material/icon/coronaShop.png', alt: 'topPage_favoriteIcon', class: 'png'
+          .points-box__text1 ウィズコロナ対策を確認
+          .points-box__text2
+            各飲食店の感染防止対策を一目でわかる
+  .main__pickup
+    .main__pickup--title
+      .title ピックアップ店舗
+    .main__pickup--shops
+      .shops-boxes
+        .shops-box
+          .shops-box__pic
+            = image_tag 'material/shops/kako-izakaya.jpeg', alt: 'topPage_shopPics', class: 'shop-pic'
+          .shops-box__name か子 家庭料理
+          .shops-box__condition 柏座
+        .shops-box
+          .shops-box__pic
+            = image_tag 'material/shops/kako-izakaya.jpeg', alt: 'topPage_shopPics', class: 'shop-pic'
+          .shops-box__name か子 家庭料理
+          .shops-box__condition 二ツ宮
+        .shops-box
+          .shops-box__pic
+            = image_tag 'material/shops/kako-izakaya.jpeg', alt: 'topPage_shopPics', class: 'shop-pic'
+          .shops-box__name か子 家庭料理
+          .shops-box__condition 領家
+        .shops-box
+          .shops-box__pic
+            = image_tag 'material/shops/kako-izakaya.jpeg', alt: 'topPage_shopPics', class: 'shop-pic'
+          .shops-box__name か子 家庭料理
+          .shops-box__condition 宮本町
+  .main__appBanner2
+    .banner
+      .banner__text1
+        .p だれでもかんたん、    
+        .p 飲食店探しを変えるアプリ
+      .banner__text2
+        今すぐダウンロード！
+      .banner__logo
+        .banner__logo--apple
+          = link_to '#' do
+            = image_tag 'material/icon/AppStoreLogo.png', class: 'logoSize'
+        .banner__logo--google
+          = link_to '#' do
+            = image_tag 'material/icon/GooglePlayLogo.png', class: 'logoSize'

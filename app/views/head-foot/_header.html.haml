@@ -1,0 +1,35 @@
+.header 
+  .header__main
+    .header__main--pic
+      .appLogo
+        =  link_to root_path do
+          = image_tag 'material/icon/logo_transparent.png', class: "appLogo__main"
+      .user-navi
+        = link_to "#" do
+          .user-navi__login
+            = icon("fas", "sign-in-alt")
+            .text ログイン
+        = link_to "#" do
+          .user-navi__new
+            = icon("fas", "user-plus")
+            .text 新規登録
+  .header__search-bar
+    .search-navi
+      .search-navi__ageo
+        .search-navi__ageo--text Ageo
+      .search-navi__town
+        %select.search-navi__town--options
+          %option= "エリアで検索"
+          %option= "上尾下"
+          %option= "上尾宿"
+          %option= "上尾村"
+          %option= "浅間台"
+          %option= "東町"
+          %option= "畔吉"
+          %option= "愛宕"
+      .search-navi__shop
+        %form.search-navi__shop--form
+          %input.search-navi__shop--searchBox{ :name => 'Search', :placeholder => '店名・ジャンルから探す'}
+          -# %button{type:'submit'}
+      .search-navi__searchBtn
+        .search-navi__searchBtn--text 検索する
