@@ -28,9 +28,10 @@ Things you may want to cover:
 ## users Table
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, unique: true|
 |email|string|null: false, unique: true|
 |password|string|null: false|
+|owner_password|string|------|
 ### Association
 - has_many :favorites
 - has_many :shops, through: :favorites

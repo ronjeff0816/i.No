@@ -5,14 +5,31 @@
         =  link_to root_path do
           = image_tag 'material/icon/logo_transparent.png', class: "appLogo__main"
       .user-navi
-        = link_to "#" do
-          .user-navi__login
-            = icon("fas", "sign-in-alt")
-            .text ログイン
-        = link_to "#" do
-          .user-navi__new
-            = icon("fas", "user-plus")
-            .text 新規登録
+        -if user_signed_in?
+          = link_to "#" do
+            .user-navi__fav
+              = icon("fas", "bookmark")
+              .text お気に入り
+        -else 
+          = link_to new_user_registration_path do
+            .user-navi__new
+              = icon("fas", "user-plus")
+              .text 新規登録
+        -if user_signed_in? 
+          = link_to destroy_user_session_path, method: :delete do
+            .user-navi__login
+              = icon("fas", "sign-out-alt")
+              .text ログアウト
+        -else 
+          = link_to new_user_session_path, method: :new do
+            .user-navi__login
+              = icon("fas", "sign-in-alt")
+              .text ログイン
+        -if user_signed_in?
+          = link_to edit_user_path(current_user) do
+            .user-navi__new
+              = icon("fas", "user-cog")
+              .text 情報編集
   .header__search-bar
     .search-navi
       .search-navi__ageo

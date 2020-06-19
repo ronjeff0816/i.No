@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'shops/index'
+  devise_for :users
 
   root "shops#index"
+  resources :users, only: [:edit, :update]
 
 end
