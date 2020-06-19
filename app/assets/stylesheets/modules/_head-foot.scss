@@ -80,31 +80,41 @@
       display: flex;
       justify-content: space-between;
       &__ageo {
-        background-color: white;
         height: 60px;
-        width: 20%;
+        width: 15%;
         text-align: center;
-        border-radius: 2px;
         &--text {
-          padding-top: 15px;
-          font-size: 25px;
+          font-size: 50px;
+          font-weight: bolder;
+          color: darkcyan;
+          font-family: cursive;
         }
       }
       &__town {
+        background-color: black;
+        width: 27%;
+        height: 60px;
+      }
+      &__shop {
         background-color: white;
         height: 60px;
-        width: 50%;
+        width: 38%;
         text-align: center;
         border-radius: 2px;
-        &--text {
-          padding-top: 15px;
-          font-size: 25px;
+        display: flex;
+        &--form {
+          width: 100%;
+        }
+        &--searchBox {
+          padding-left: 10px;
+          height: 100%;
+          width: 100%;
         }
       }
       &__searchBtn {
         background: linear-gradient(#66cccc, #009999);
         height: 60px;
-        width: 25%;
+        width: 13%;
         text-align: center;
         border-radius: 2px;
         &--text {

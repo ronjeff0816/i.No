@@ -16,8 +16,11 @@
   .header__search-bar
     .search-navi
       .search-navi__ageo
-        .search-navi__ageo--text 上尾市
+        .search-navi__ageo--text Ageo
       .search-navi__town
-        .search-navi__town--text エリアを選択
+      .search-navi__shop
+        %form.search-navi__shop--form
+          %input.search-navi__shop--searchBox{ :name => 'Search', :placeholder => '店名・ジャンルから探す'}
+          -# %button{type:'submit'}
       .search-navi__searchBtn
         .search-navi__searchBtn--text 検索する
