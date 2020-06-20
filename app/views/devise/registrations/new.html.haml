@@ -52,6 +52,6 @@
                 .field-label__up--extraText
                   (店舗管理者の場合はi.Noから発行されたコードを入力)
           .field-input
-            = f.password_field :owner_password, autocomplete: "off"
+            = f.text_field :owner_password, autocomplete: "off"
         .actions
           = f.submit "アカウントを作成", class: 'btn'

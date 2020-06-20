@@ -1,6 +1,8 @@
 = link_to '' do
   .TP-purchaseBtn 
-    = link_to edit_user_path(current_user) do
+    = link_to new_shop_path do
       %span.TP-purchaseBtn__text
-        店舗管理
+        店舗登録
         = image_tag 'material/icon/restaurant-icon.png', alt: 'sellItemBtn', class: 'TP-purchaseBtn__icon'
+
+        -# edit_user_path(current_user)
