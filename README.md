@@ -1,31 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
 # i.No DB Design
 
-## users Table
+## Users Table
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true|
@@ -33,35 +10,64 @@ Things you may want to cover:
 |password|string|null: false|
 |owner_password|string|------|
 ### Association
-- has_many :favorites
-- has_many :shops, through: :favorites
+- has_many :favorites, dependent: :destroy
+- has_many :favorite_shops, through: :favorites, source: :shop
 
-## favorites Table
+
+## Favorites Table
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
 |shop|references|null: false, foreign_key: true|
+|user_id, shop_id|index|unique: true|
 ### Association
 - belongs_to :user
 - belongs_to :shop
 
-## shops Table 
+
+## Shops Table 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|image|string|null: false|
-|tel|integer|null: false|
-|town_id|integer|null: false|
-|add|string|null: false|
-|condition_id|integer|null: false|
-|weekday_open|time|null: false|
-|weekday_close|time|null: false|
-|weekend_open|time|null: false|
-|weekend_close|time|null: false|
-|dayoff|string|null: false|
+|shop_name|string|null: false|
+|condition|integer|null: false|
+|introduction|text|------|
+|shop_tel|string|------|
+|shop_add|string|null: false|
+|weekday_open|time|------|
+|weekday_close|time|------|
+|weekend_open|time|------|
+|weekend_close|time|------|
+|dayoff|string|------|
 |owner_id|integer|------|
+|town_id|integer|null: false|
+|corona_twoWays|boolean|------|
+|corona_twoMeters|boolean|------|
+|corona_partition|boolean|------|
+|corona_disinfect|boolean|------|
+|corona_mask|boolean|------|
+|corona_temperature|boolean|------|
+|corona_distance|boolean|------|
+|corona_customerDisinfect|boolean|------|
+|corona_customerDistance|boolean|------|
+|corona_exit|boolean|------|
 ### Association
-- belongs_to_active_hash :town
-- belongs_to_active_hash :condition
-- has_many :favorites
-- has_many :users, through: :favorites
+- belongs_to :town
+- has_many :shop_images, dependent: :destroy
+- accepts_nested_attributes_for :shop_images, allow_destroy: true
+
+
+## Shop_images Table
+|Column|Type|Options|
+|------|----|-------|
+|image|string|null: false, foreign_key: true|
+|shop|references|null: false, foreign_key: true|
+### Association
+- belongs_to :shop
+
+
+## Towns Table
+|Column|Type|Options|
+|------|----|-------|
+|town_name|string|null: false|
+### Association
+- has_many :shops
