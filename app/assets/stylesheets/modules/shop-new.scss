@@ -1,3 +1,195 @@
+* {
+  box-sizing: border-box;
+}
+
+@mixin labels {
+  margin-bottom: 5px;
+  font-size: 25px;
+}
+
+@mixin must {
+  background-color: red;
+  border-radius: 2px;
+  font-size: 17px;
+  height: 25px;
+  width: 50px;
+  text-align: center;
+  margin-left: 20px;
+  margin-top: 6px;
+}
+
+@mixin upper {
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 22px;
+  border-bottom: 2px solid darkcyan;
+}
+
+@mixin chunk {
+  padding: 25px 60px;
+  background-color:blanchedalmond;
+  margin-top: 20px;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+@mixin enter {
+  height: 40px;
+  width: 100%;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
 .shop-new {
-  color: white;
+  width: 100%;
+  padding: 0 100px;
+  &__title {
+    height: 100px;
+    width: 100%;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+  }
+  &__general {
+    @include chunk;
+    &--upper {
+      @include upper;
+    }
+    &--lower {
+      .shop_new {
+        display: flex;
+        .label {
+          @include labels;
+        }
+        .must {
+          @include must;
+        }
+      }
+      select {
+        height: 40px;
+        width: 160px;
+        margin-bottom: 10px;
+        padding-left: 8px;
+      }
+      .enter {
+        @include enter;
+      }
+      .label {
+        @include labels;
+      }
+      #introduction-enter {
+        padding-top: 5px;
+      }
+    }
+  }
+  &__hours {
+    @include chunk;
+    &--upper {
+      @include upper;
+    }
+    &--lower {
+      font-size: 28px;
+      .operating-hours {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 12px;
+        .label {
+          @include labels;
+          padding-top: 5px;
+        }
+        #day-off {
+          font-size: 28px;
+        }
+        #shop-condition {
+          font-size: 28px;
+        }
+        p {
+          margin-left: 10px;
+          font-size: 30px;
+          height: 60px;
+          select {
+            height: 50px;
+            width: 90px;
+            padding-left: 17px;
+         }
+         .dayoff {
+           width: 610px;
+           font-size: 18px;
+           padding-left: 10px;
+           height: 50px;
+         }
+         .condition {
+           width: 200px;
+         }
+        }
+      }
+      #forWeekends {
+        margin-top: 18px;
+      }
+      .shop-condition {
+        margin-top: 25px;
+        width: 40%;
+        display: flex;
+        justify-content: space-between;
+        .label {
+          padding-top: 10px;
+          @include labels;
+        }
+        p {
+          margin-left: 10px;
+          font-size: 30px;
+          select {
+            height: 60px;
+            width: 230px;
+            padding-left: 17px;
+          }
+        }
+      }
+    }
+  }
+  &__corona {
+    @include chunk;
+    &--upper {
+      @include upper;
+      span {
+        font-size: 20px;
+        margin-left: 5px;
+      }
+    }
+    &--lower {
+      font-size: 22px;
+      .corona-checkbox {
+        display: flex;
+        margin-bottom: 10px;
+        .check {
+          margin-top: 8px;
+          margin-right: 12px;
+          height: 20px;
+          width: 20px;
+        }
+      }
+    }
+  }
+  &__submit {
+    margin-top: 30px;
+    width: 100%;
+    height: 70px;
+    margin-bottom: 80px;
+    &--btn {
+      height: 100%;
+      text-align: center;
+      .btn {
+        background-color: darkcyan;
+        color: blanchedalmond;
+        height: 100%;
+        width: 20%;
+        border: 2px solid blanchedalmond;
+        border-radius: 3px;
+        font-size: 35px;
+        // font-weight: bold;
+      }
+    }
+  }
 }
