@@ -41,26 +41,30 @@
       .title ピックアップ店舗
     .main__pickup--shops
       .shops-boxes
-        .shops-box
-          .shops-box__pic
-            = image_tag 'material/shops/kako-izakaya.jpeg', alt: 'topPage_shopPics', class: 'shop-pic'
-          .shops-box__name か子 家庭料理
-          .shops-box__condition 柏座
-        .shops-box
-          .shops-box__pic
-            = image_tag 'material/shops/kako-izakaya.jpeg', alt: 'topPage_shopPics', class: 'shop-pic'
-          .shops-box__name か子 家庭料理
-          .shops-box__condition 二ツ宮
-        .shops-box
-          .shops-box__pic
-            = image_tag 'material/shops/kako-izakaya.jpeg', alt: 'topPage_shopPics', class: 'shop-pic'
-          .shops-box__name か子 家庭料理
-          .shops-box__condition 領家
-        .shops-box
-          .shops-box__pic
-            = image_tag 'material/shops/kako-izakaya.jpeg', alt: 'topPage_shopPics', class: 'shop-pic'
-          .shops-box__name か子 家庭料理
-          .shops-box__condition 宮本町
+        - @pickupShops.each do |shop|
+          .shops-box
+            = link_to "/shops/#{shop.id}" do
+              .shops-box__pic
+                = image_tag 'material/shops/kako-izakaya.jpeg', alt: 'topPage_shopPics', class: 'shop-pic'
+              .shops-box__name 
+                = "#{shop.shop_name}"
+              .shops-box__condition
+                = "#{shop.town.town_name}"
+        -# .shops-box
+        -#   .shops-box__pic
+        -#     = image_tag 'material/shops/kako-izakaya.jpeg', alt: 'topPage_shopPics', class: 'shop-pic'
+        -#   .shops-box__name か子 家庭料理
+        -#   .shops-box__condition 二ツ宮
+        -# .shops-box
+        -#   .shops-box__pic
+        -#     = image_tag 'material/shops/kako-izakaya.jpeg', alt: 'topPage_shopPics', class: 'shop-pic'
+        -#   .shops-box__name か子 家庭料理
+        -#   .shops-box__condition 領家
+        -# .shops-box
+          -# .shops-box__pic
+          -#   = image_tag 'material/shops/kako-izakaya.jpeg', alt: 'topPage_shopPics', class: 'shop-pic'
+          -# .shops-box__name か子 家庭料理
+          -# .shops-box__condition 宮本町
   .main__appBanner2
     .banner
       .banner__text1
