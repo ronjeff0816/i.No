@@ -1,9 +1,12 @@
 class ShopsController < ApplicationController
   before_action :authenticate_user!, only:[:edit]
+  # before_action :set_shops, only:[:edit, :show]
  
   # before_action :set_user, only:[:index]
 
   def index
+    random = Shop.all.shuffle
+    @pickupShops = random.take(4)
   end
 
   def new
@@ -22,9 +25,14 @@ class ShopsController < ApplicationController
   end
 
   def edit
+    @shop = Shop.find(params[:id])
   end
 
   def update
+  end
+
+  def show
+    @shop = Shop.find(params[:id])
   end
   # private
 
@@ -33,6 +41,10 @@ class ShopsController < ApplicationController
   # end
 
   private 
+
+  def set_shops
+    @shop = Shop.find(params[:id])
+  end
 
   def shop_params
     params.require(:shop).permit(
