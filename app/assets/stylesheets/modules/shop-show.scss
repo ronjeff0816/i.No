@@ -1,0 +1,119 @@
+@mixin blocks {
+  width: 100%;
+  background-color: darkcyan;
+  padding: 20px 30px;
+}
+
+.show {
+  background-color: black;
+  padding: 0 60px;
+  width: 100%;
+  &__shop_name {
+    color: white;
+    font-size: 50px;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+  &__main {
+    @include blocks;
+    display: flex;
+    justify-content: space-between;
+    &--pic {
+      height: 496px;
+      width: 38%;
+      background-color: white;
+      border: chocolate 5px solid;
+      border-radius: 2px;
+      .shop-pic {
+        height: 100%;
+        width: 100%;
+      }
+    }
+    &--info {
+      height: 100%;
+      width: 62%;
+      background-color: blanchedalmond;
+      padding: 15px;
+      .info-title {
+        height: 10%;
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        border-bottom: chocolate 2px solid;
+        margin-bottom: 20px;
+      }
+      .info-text {
+        letter-spacing: 5px;
+        width: 100%;
+        &__main {
+          margin-bottom: 20px;
+          font-size: 25px;
+          font-weight: bold;
+          display: flex;
+          &--data {
+            font-weight: normal;
+            margin-left: 15px;
+          }
+        }
+        #flex {
+          flex-direction: column;
+          letter-spacing: 4px;
+          #data {
+            margin-left: 0;
+          }
+        }
+      }
+      .info-corona {
+        height: 70px;
+        width: 100%;
+        .icon {
+          height: 100%;
+          width: 9%;
+          margin-right: 0.2%;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+  &__explain {
+    @include blocks;
+    margin-top: 50px;
+    &--title {
+      text-align: center;
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    &--text {
+      height: 60px;
+      display: flex;
+      margin-bottom: 8px;
+      .icon {
+        height: 100%;
+        width: 60px;
+        border-radius: 4px;
+      }
+      .explain {
+        font-size: 27px;
+        margin: auto 0 auto 10px;
+      }
+    }
+  }
+  &__editBtn {
+    margin: 40px auto;
+    text-align: center;
+    margin-top: 40px;
+    background-color: darkcyan;
+    width: 220px;
+    height: 75px;
+    border-radius: 3px;
+    &--text {
+      color: blanchedalmond;
+      padding-top: 10px;
+      font-size: 35px;
+      font-weight: bold;
+    }
+  }
+}
