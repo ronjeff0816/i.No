@@ -60,3 +60,5 @@ gem 'haml-rails'
 gem 'bootstrap', '~> 4.5.0'
 
 gem 'devise'
+
+gem 'carrierwave'
