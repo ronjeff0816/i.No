@@ -5,6 +5,9 @@ class ShopsController < ApplicationController
   # before_action :set_user, only:[:index]
 
   def index
+    if current_user.present?
+      @user = User.find(current_user.id)
+    end
     @shop = Shop.all
     random = Shop.all.shuffle
     @pickupShops = random.take(4)
@@ -30,6 +33,12 @@ class ShopsController < ApplicationController
   end
 
   def update
+    @shop = Shop.find(params[:id])
+    if @shop.update(shop_params)
+      redirect_to root_path 
+    else
+      render :edit
+    end
   end
 
   def show
