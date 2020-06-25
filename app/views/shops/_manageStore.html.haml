@@ -1,5 +1,11 @@
 = link_to '' do
   .TP-purchaseBtn 
+    -# -if current_user.id == @shop.owner_id.to_s
+    -#   = link_to "/shops/#{shop.id}" do
+    -#     %span.TP-purchaseBtn__text
+    -#       店舗編集
+    -#       = image_tag 'material/icon/restaurant-icon.png', alt: 'sellItemBtn', class: 'TP-purchaseBtn__icon'
+    -# -else
     = link_to new_shop_path do
       %span.TP-purchaseBtn__text
         店舗登録

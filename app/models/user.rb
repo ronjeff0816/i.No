@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :favorites, dependent: :destroy
   has_many :favorite_shops, through: :favorites, source: :shop
+  # has_one :favorite_shops, dependent: :destroy
   
 
   validates :name, uniqueness: true
