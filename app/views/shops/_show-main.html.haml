@@ -92,7 +92,8 @@
       = image_tag 'material/corona/cough.png', alt: 'exit-icon', class: 'icon'
       .explain
         当店は体調不良だったり、咳がひどいお客様にはお帰りいただく場合がございます
-  = link_to edit_shop_path do
-    .show__editBtn
-      .show__editBtn--text
-        情報を編集
+  -if @shop.owner_id == current_user.id
+    = link_to edit_shop_path do
+      .show__editBtn
+        .show__editBtn--text
+          情報を編集
