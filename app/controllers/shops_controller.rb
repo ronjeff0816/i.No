@@ -5,6 +5,7 @@ class ShopsController < ApplicationController
   # before_action :set_user, only:[:index]
 
   def index
+    @shop = Shop.all
     random = Shop.all.shuffle
     @pickupShops = random.take(4)
   end
@@ -33,6 +34,7 @@ class ShopsController < ApplicationController
 
   def show
     @shop = Shop.find(params[:id])
+    @shop_image = ShopImage.all
   end
   # private
 
@@ -69,7 +71,8 @@ class ShopsController < ApplicationController
       :corona_distance,
       :corona_customerDisinfect,
       :corona_customerDistance,
-      :corona_exit)
+      :corona_exit,
+      shop_images_attributes:  [:image, :_destroy, :id])
   end
 
 end
