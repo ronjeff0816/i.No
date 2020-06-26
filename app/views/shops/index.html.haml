@@ -2,5 +2,5 @@
   = render "head-foot/header"
   = render "main"
   = render "head-foot/footer"
-  - if @user.owner_password == 'Eat75iNo?'
+  - if user_signed_in? && @user.owner_password == 'Eat75iNo?'
     = render "manageStore"
