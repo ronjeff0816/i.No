@@ -40,6 +40,15 @@
   margin-bottom: 15px;
 }
 
+@mixin previews {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+}
+
 .shop-new {
   width: 100%;
   padding: 0 100px;
@@ -88,13 +97,21 @@
     @include chunk;
     &--upper {
       @include upper;
+      display: flex;
+      .must1 {
+        @include must;
+        height: 30px;
+        width: 76px;
+        margin-top: 13px;
+        padding-top: 3px;
+      }
     }
     &--lower {
       width: 100%;
       display: flex;
       justify-content: space-between;
       .box {
-        height: 240px;
+        height: 290px;
         width: 19%;
         .picNum {
           height: 50px;
@@ -105,7 +122,6 @@
           border: 3px chocolate solid;
         }
         .label {
-          background-color: yellow;
           height: 190px;
           width: 100%;
           .camera {
@@ -113,6 +129,7 @@
             height: 100%;
             width: 100%;
             text-align: center;
+            position: relative;
             .fa {
               color: white;
               font-size: 60px;
@@ -121,6 +138,38 @@
             .img-file {
               display: none;
             }
+            #preview1 {
+              @include previews;
+            }
+            #preview2 {
+              @include previews;
+            }
+            #preview3 {
+              @include previews;
+            }
+            #preview4 {
+              @include previews;
+            }
+            #preview5 {
+              @include previews;
+            }
+          }
+        }
+        .delete {
+          width: 100%;
+          text-align: center;
+          cursor: pointer;
+          &__text {
+            background-color: black;
+            color: white;
+            font-size: 20px;
+            margin-top: 20px;
+            width: 60%;
+            margin-left: 20%;
+            border-radius: 4px;
+          }
+          .img-delete {
+            display: none;
           }
         }
       }
