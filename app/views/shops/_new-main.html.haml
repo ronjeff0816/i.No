@@ -32,6 +32,7 @@
     .shop-new__image
       .shop-new__image--upper
         店舗画像(5枚まで) 
+        .must1 1枚必須
       .shop-new__image--lower
         = f.fields_for :shop_images, @shop.shop_images.build do |img|
           .box
@@ -41,7 +42,12 @@
               = f.label :image do
                 .camera
                   = icon('fa', 'camera-retro')
-                  =img.file_field :image, name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image1'
+                  =img.file_field :image, name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image1', accept: "image/*"
+                  %img#preview1
+            .delete#delete1
+              .delete__text 
+                削除
+              = img.check_box :remove_image, class:"img-delete", id: 'deleteBox1'
           .box
             .picNum
               画像２
@@ -49,7 +55,12 @@
               = f.label :image do
                 .camera
                   = icon('fa', 'camera-retro')
-                  =img.file_field :image, name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image2'
+                  =img.file_field :image, name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image2', accept: "image/*"
+                  %img#preview2
+            .delete#delete2
+              .delete__text 
+                削除
+              = img.check_box :remove_image, class:"img-delete", id: 'deleteBox2'
           .box
             .picNum
               画像３
@@ -57,7 +68,12 @@
               = f.label :image do
                 .camera
                   = icon('fa', 'camera-retro')
-                  =img.file_field :image, name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image3'
+                  =img.file_field :image, name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image3', accept: "image/*"
+                  %img#preview3
+            .delete#delete3
+              .delete__text 
+                削除
+              = img.check_box :remove_image, class:"img-delete", id: 'deleteBox3'
           .box
             .picNum
               画像４
@@ -65,7 +81,12 @@
               = f.label :image do
                 .camera
                   = icon('fa', 'camera-retro')
-                  =img.file_field :image, name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image4'
+                  =img.file_field :image, name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image4', accept: "image/*"
+                  %img#preview4
+            .delete#delete4
+              .delete__text 
+                削除
+              = img.check_box :remove_image, class:"img-delete", id: 'deleteBox4'
           .box
             .picNum
               画像５
@@ -73,8 +94,12 @@
               = f.label :image do
                 .camera
                   = icon('fa', 'camera-retro')
-                  =img.file_field :image, name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image5'
-
+                  =img.file_field :image, name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image5', accept: "image/*"
+                  %img#preview5
+            .delete#delete5
+              .delete__text 
+                削除
+              = img.check_box :remove_image, class:"img-delete", id: 'deleteBox5'
     .shop-new__hours
       .shop-new__hours--upper
         営業時間
@@ -84,21 +109,21 @@
           .label
             = f.label :開店時間
           %p
-            = f.time_select :weekday_open, class: 'time', type: "time"
+            = f.time_select :weekday_open,{:default => {:hour => '11', :minute => '00'}}, class: 'time', type: "time"
           .label
             = f.label :閉店時間
           %p
-            = f.time_select :weekday_close, class: 'time', type: "time"
+            = f.time_select :weekday_close,{:default => {:hour => '22', :minute => '00'}}, class: 'time', type: "time"
         #forWeekends 休日の営業
         .operating-hours
           .label
             = f.label :開店時間
           %p
-            = f.time_select :weekend_open, class: 'time', type: "time"
+            = f.time_select :weekend_open,{:default => {:hour => '10', :minute => '00'}}, class: 'time', type: "time"
           .label
             = f.label :閉店時間
           %p
-            = f.time_select :weekend_close, class: 'time', type: "time"
+            = f.time_select :weekend_close,{:default => {:hour => '21', :minute => '00'}}, class: 'time', type: "time"
         .operating-hours#day_off
           .label
             = f.label :休日
