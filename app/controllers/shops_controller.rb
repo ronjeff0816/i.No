@@ -81,6 +81,7 @@ class ShopsController < ApplicationController
       :corona_customerDisinfect,
       :corona_customerDistance,
       :corona_exit,
+      :remove_image,
       shop_images_attributes:  [:image, :_destroy, :id])
   end
 
