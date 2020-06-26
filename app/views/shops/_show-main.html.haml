@@ -4,6 +4,26 @@
   .show__main
     .show__main--pic
       = image_tag @shop.shop_images.first.image.to_s, class: "shop-pic"
+      -if @shop.condition == 0
+        .shopCondition
+          .shopCondition__inner
+            閉店中
+      -elsif @shop.condition == 1
+        .shopCondition#condition1
+          .shopCondition__inner#condition1-text
+            準備中
+      -elsif @shop.condition == 2
+        .shopCondition#condition2
+          .shopCondition__inner#condition2-text
+            まもなく開店
+      -elsif @shop.condition == 3
+        .shopCondition#condition3
+          .shopCondition__inner#condition3-text
+            営業中
+      -else 
+        .shopCondition#condition4
+          .shopCondition__inner#condition4-text
+            まもなく閉店
     .show__main--info
       .info-title
         = "上尾市#{@shop.town.town_name}"

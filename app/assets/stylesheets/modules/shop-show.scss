@@ -25,9 +25,52 @@
       background-color: white;
       border: chocolate 5px solid;
       border-radius: 2px;
+      position: relative;
       .shop-pic {
         height: 100%;
         width: 100%;
+      }
+      .shopCondition {
+        background-color: brown;
+        width: 100%;
+        height: 20%;
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        &__inner {
+          padding-top: 10px;
+          width: 100%;
+          height: 100%;
+          font-size: 50px;
+        }
+      }
+      #condition1 {
+        background-color: coral;
+        #condition1-text {
+          color: white;
+          font-weight: 200;
+        }
+      }
+      #condition2 {
+        background-color: cornflowerblue;
+        #condition2-text {
+          color: white;
+          font-weight: 400;
+        }
+      }
+      #condition3 {
+        background-color: blue;
+        #condition3-text {
+          font-weight: 800;
+          color: white;
+        }
+      }
+      #condition4 {
+        background-color: darkorchid;
+        #condition4-text {
+          color: white;
+          font-weight: 300;
+        }
       }
     }
     &--info {
