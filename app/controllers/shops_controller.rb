@@ -30,6 +30,7 @@ class ShopsController < ApplicationController
 
   def edit
     @shop = Shop.find(params[:id])
+    @pics = @shop.shop_images
   end
 
   def update
