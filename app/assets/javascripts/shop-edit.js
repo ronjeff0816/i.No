@@ -74,4 +74,10 @@ $(function(){
   });
 
 
+  // 削除確認
+  $('#DeleteBtn').click(function() {
+    $('#DeleteBtn').remove();
+    $(".hidden-link").show();
+  });
+
 });
