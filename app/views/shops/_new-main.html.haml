@@ -31,8 +31,8 @@
           = f.text_field :shop_add, class: 'enter', type: "text", placeholder: '住所を入力', maxlength: "40"
     .shop-new__image
       .shop-new__image--upper
-        店舗画像(5枚まで) 
-        .must1 1枚必須
+        店舗画像
+        .must1 5枚必須
       .shop-new__image--lower
         = f.fields_for :shop_images, @shop.shop_images.build do |img|
           .box
@@ -42,64 +42,44 @@
               = f.label :image do
                 .camera
                   = icon('fa', 'camera-retro')
-                  =img.file_field :image, name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image1', accept: "image/*"
+                  =img.file_field :image, type: 'file', name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image1'
                   %img#preview1
-            .delete#delete1
-              .delete__text 
-                削除
-              = img.check_box :remove_image, class:"img-delete", id: 'deleteBox1'
           .box
             .picNum
-              画像２
+              画像 2
             .label
               = f.label :image do
                 .camera
                   = icon('fa', 'camera-retro')
-                  =img.file_field :image, name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image2', accept: "image/*"
+                  =img.file_field :image, type: 'file', name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image2'
                   %img#preview2
-            .delete#delete2
-              .delete__text 
-                削除
-              = img.check_box :remove_image, class:"img-delete", id: 'deleteBox2'
           .box
             .picNum
-              画像３
+              画像 3
             .label
               = f.label :image do
                 .camera
                   = icon('fa', 'camera-retro')
-                  =img.file_field :image, name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image3', accept: "image/*"
+                  =img.file_field :image, type: 'file', name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image3'
                   %img#preview3
-            .delete#delete3
-              .delete__text 
-                削除
-              = img.check_box :remove_image, class:"img-delete", id: 'deleteBox3'
           .box
             .picNum
-              画像４
+              画像 4
             .label
               = f.label :image do
                 .camera
                   = icon('fa', 'camera-retro')
-                  =img.file_field :image, name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image4', accept: "image/*"
+                  =img.file_field :image, type: 'file', name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image4'
                   %img#preview4
-            .delete#delete4
-              .delete__text 
-                削除
-              = img.check_box :remove_image, class:"img-delete", id: 'deleteBox4'
           .box
             .picNum
-              画像５
+              画像 5
             .label
               = f.label :image do
                 .camera
                   = icon('fa', 'camera-retro')
-                  =img.file_field :image, name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image5', accept: "image/*"
+                  =img.file_field :image, type: 'file', name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image5'
                   %img#preview5
-            .delete#delete5
-              .delete__text 
-                削除
-              = img.check_box :remove_image, class:"img-delete", id: 'deleteBox5'
     .shop-new__hours
       .shop-new__hours--upper
         営業時間
@@ -172,5 +152,3 @@
     .shop-new__submit
       .shop-new__submit--btn
         = f.submit "登録する",class: "btn"
-
--# = f.check_box :user_ids, {class: "check_box"}, true, false
