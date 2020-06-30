@@ -1,7 +1,8 @@
 = link_to '' do
   .TP-purchaseBtn 
     -if Shop.where(owner_id: current_user.id).exists?
-      = link_to edit_shop_path(current_user) do
+      - i = @myShop.ids
+      = link_to "/shops/#{i[0]}/edit" do
         %span.TP-purchaseBtn__text
           店舗編集
           = image_tag 'material/icon/restaurant-icon.png', alt: 'sellItemBtn', class: 'TP-purchaseBtn__icon'
