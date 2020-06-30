@@ -31,50 +31,35 @@
           = f.text_field :shop_add, class: 'enter', type: "text", placeholder: '住所を入力', maxlength: "40"
     .shop-new__image
       .shop-new__image--upper
-        店舗画像(5枚まで) 
+        店舗画像
+        .must1 5枚必須
       .shop-new__image--lower
-        = f.fields_for :shop_images, @shop.shop_images.build do |img|
-          .box
-            .picNum
-              画像１
-            .label
+        - a = 1
+        - @shop.shop_images.each do |image|
+          .preview-box 
+            .preview-box__upper
               = f.label :image do
-                .camera
-                  = icon('fa', 'camera-retro')
-                  =img.file_field :image, name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image1'
-          .box
-            .picNum
-              画像２
-            .label
-              = f.label :image do
-                .camera
-                  = icon('fa', 'camera-retro')
-                  =img.file_field :image, name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image2'
-          .box
-            .picNum
-              画像３
-            .label
-              = f.label :image do
-                .camera
-                  = icon('fa', 'camera-retro')
-                  =img.file_field :image, name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image3'
-          .box
-            .picNum
-              画像４
-            .label
-              = f.label :image do
-                .camera
-                  = icon('fa', 'camera-retro')
-                  =img.file_field :image, name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image4'
-          .box
-            .picNum
-              画像５
-            .label
-              = f.label :image do
-                .camera
-                  = icon('fa', 'camera-retro')
-                  =img.file_field :image, name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image5'
-
+                = image_tag image.image.to_s, width: "180", height: "220", alt: "picPreview", id: "previewImage#{a}"
+          - a += 1
+      .preview-box__lower
+        .edit-btn
+          %i.fa.fa-camera-retro  
+            %p 画像をクリックしてください
+                    
+      .hidden-content
+        - b = 1
+        = f.fields_for :shop_images do |i|
+          = i.file_field :image, class: "hidden-field"
+          - b += 1
+      -# .label-content
+      -#   = f.label :"shop_images_attributes_#{@shop.shop_images.length}_image", class: "label-box", id: "label-box--#{@shop.shop_images.length}" do
+      -#     %pre.label-box__text-visible
+      -#       %i.fa.fa-camera-retro
+      -#         %p.fa-camera-retro__text
+      -#           写真を追加
+          -# = i.check_box :_destroy, class: "hidden-checkbox"
+        -# - @shop.shop_images.length.upto(4) do |i|
+        -#   %input{name: "shop[shop_images_attributes][#{i}][image]", id: ""}
     .shop-new__hours
       .shop-new__hours--upper
         営業時間
