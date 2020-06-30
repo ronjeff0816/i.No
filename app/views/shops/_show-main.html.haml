@@ -117,3 +117,12 @@
       .show__editBtn
         .show__editBtn--text
           情報を編集
+    .show__editBtn#DeleteBtn
+      .show__editBtn--text#DeleteText
+        店舗を削除
+    .hidden-link
+      .verifyDelete
+        本当に削除しますか?
+      = link_to shop_path, method: :delete do
+        .verifyDelete__text
+          削除
