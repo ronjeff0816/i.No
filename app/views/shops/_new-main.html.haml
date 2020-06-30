@@ -14,9 +14,9 @@
         %p
           = f.text_field :shop_name, class: 'enter', type: "text", required: "required", placeholder: '店舗名を入力(40字以内)', maxlength: "40"
         .label
-          = f.label :店舗紹介
+          = f.label :ジャンル
         %p
-          = f.text_area :introduction, class: 'enter', id: 'introduction-enter', type: "text", placeholder: '店舗の説明 （1000字以内）', maxlength: "1000"
+          = f.text_field :introduction, class: 'enter', id: 'introduction-enter', type: "text", placeholder: '料理のジャンル （50字以内）', maxlength: "50"
         .label
           = f.label :電話番号
         %p
