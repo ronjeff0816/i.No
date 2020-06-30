@@ -15,7 +15,7 @@ class ShopsController < ApplicationController
 
   def new
     @shop = Shop.new
-    # @shop.shop_images.new
+    @shop.shop_images.new
   end
 
   def create
@@ -31,6 +31,7 @@ class ShopsController < ApplicationController
   def edit
     @shop = Shop.find(params[:id])
     @pics = @shop.shop_images
+    @length = @pics.length
   end
 
   def update
@@ -82,7 +83,6 @@ class ShopsController < ApplicationController
       :corona_customerDisinfect,
       :corona_customerDistance,
       :corona_exit,
-      :remove_image,
       shop_images_attributes:  [:image, :_destroy, :id])
   end
 
