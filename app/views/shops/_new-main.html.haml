@@ -12,7 +12,7 @@
           .must        
             必須
         %p
-          = f.text_field :shop_name, class: 'enter', type: "text", placeholder: '店舗名を入力(40字以内)', maxlength: "40"
+          = f.text_field :shop_name, class: 'enter', type: "text", required: "required", placeholder: '店舗名を入力(40字以内)', maxlength: "40"
         .label
           = f.label :店舗紹介
         %p
@@ -27,8 +27,8 @@
           .must
             必須
         %p
-          = f.select :town_id, [["町域を選択", 0],["上尾下", 1],["上尾宿", 2],["上尾村",3],["浅間台",4],["東町",5],["畔吉",6],["愛宕",7],["泉台",8],["壱丁目",9],["井戸木",10],["今泉",11],["上野",12],["上野本郷",13],["大谷本郷",14],["柏座",15],["春日",16],["上",17],["上町",18],["上平中央",19],["川",20],["瓦葺",21],["久保",22],["小泉",23],["小敷谷",24],["五番町",25],["栄町",26],["地頭方",27],["須ケ谷",28],["菅谷",29],["堤崎",30],["戸崎",31],["中新井",32],["仲町",33],["中妻",34],["中分",35],["西貝塚",36],["錦町",37],["西宮下",38],["西門前",39],["原市",40],["原市北",41],["原市中",42],["原新町",43],["日の出",44],["平方",45],["平方領々家",46],["平塚",47],["藤波",48],["富士見",49],["二ツ宮",50],["弁財",51],["本町",52],["緑丘",53],["南",54],["宮本町",55],["向山",56],["谷津",57],["領家",58]], class: 'town', type: "integer" 
-          = f.text_field :shop_add, class: 'enter', type: "text", placeholder: '住所を入力', maxlength: "40"
+          = f.select :town_id, [["町域を選択", 0],["上尾下", 1],["上尾宿", 2],["上尾村",3],["浅間台",4],["東町",5],["畔吉",6],["愛宕",7],["泉台",8],["壱丁目",9],["井戸木",10],["今泉",11],["上野",12],["上野本郷",13],["大谷本郷",14],["柏座",15],["春日",16],["上",17],["上町",18],["上平中央",19],["川",20],["瓦葺",21],["久保",22],["小泉",23],["小敷谷",24],["五番町",25],["栄町",26],["地頭方",27],["須ケ谷",28],["菅谷",29],["堤崎",30],["戸崎",31],["中新井",32],["仲町",33],["中妻",34],["中分",35],["西貝塚",36],["錦町",37],["西宮下",38],["西門前",39],["原市",40],["原市北",41],["原市中",42],["原新町",43],["日の出",44],["平方",45],["平方領々家",46],["平塚",47],["藤波",48],["富士見",49],["二ツ宮",50],["弁財",51],["本町",52],["緑丘",53],["南",54],["宮本町",55],["向山",56],["谷津",57],["領家",58]], class: 'town', type: "integer", required: "required" 
+          = f.text_field :shop_add, class: 'enter', type: "text", required: "required", placeholder: '住所を入力', maxlength: "40"
     .shop-new__image
       .shop-new__image--upper
         店舗画像
@@ -42,7 +42,7 @@
               = f.label :image do
                 .camera
                   = icon('fa', 'camera-retro')
-                  =img.file_field :image, type: 'file', name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image1'
+                  =img.file_field :image, type: 'file', required: "required", name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image1'
                   %img#preview1
           .box
             .picNum
@@ -51,7 +51,7 @@
               = f.label :image do
                 .camera
                   = icon('fa', 'camera-retro')
-                  =img.file_field :image, type: 'file', name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image2'
+                  =img.file_field :image, type: 'file', required: "required", name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image2'
                   %img#preview2
           .box
             .picNum
@@ -60,7 +60,7 @@
               = f.label :image do
                 .camera
                   = icon('fa', 'camera-retro')
-                  =img.file_field :image, type: 'file', name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image3'
+                  =img.file_field :image, type: 'file', required: "required", name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image3'
                   %img#preview3
           .box
             .picNum
@@ -69,7 +69,7 @@
               = f.label :image do
                 .camera
                   = icon('fa', 'camera-retro')
-                  =img.file_field :image, type: 'file', name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image4'
+                  =img.file_field :image, type: 'file', required: "required", name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image4'
                   %img#preview4
           .box
             .picNum
@@ -78,7 +78,7 @@
               = f.label :image do
                 .camera
                   = icon('fa', 'camera-retro')
-                  =img.file_field :image, type: 'file', name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image5'
+                  =img.file_field :image, type: 'file', required: "required", name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image5'
                   %img#preview5
     .shop-new__hours
       .shop-new__hours--upper
