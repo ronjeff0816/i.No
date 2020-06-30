@@ -48,6 +48,15 @@ class ShopsController < ApplicationController
     @shop = Shop.find(params[:id])
     @shop_image = ShopImage.all
   end
+
+  def destroy
+    @shop = Shop.find(params[:id])
+    if @shop.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
+  end
   # private
 
   # def set_user
