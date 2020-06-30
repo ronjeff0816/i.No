@@ -7,6 +7,7 @@ class ShopsController < ApplicationController
   def index
     if current_user.present?
       @user = User.find(current_user.id)
+      @myShop = Shop.where(owner_id: current_user.id)
     end
     @shop = Shop.all
     random = Shop.all.shuffle
