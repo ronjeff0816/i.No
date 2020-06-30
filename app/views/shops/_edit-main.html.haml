@@ -123,3 +123,12 @@
     .shop-new__submit
       .shop-new__submit--btn
         = f.submit "更新する",class: "btn"
+  .show__editBtn#DeleteBtn
+    .show__editBtn--text#DeleteText
+      店舗を削除
+  .hidden-link
+    .verifyDelete
+      本当に削除しますか?
+    = link_to shop_path, method: :delete do
+      .verifyDelete__text
+        削除

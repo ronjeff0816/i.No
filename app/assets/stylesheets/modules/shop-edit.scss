@@ -36,3 +36,51 @@
 .hidden-content {
   display: none;
 }
+
+#DeleteBtn {
+  border: 5px solid white;
+  #DeleteText {
+    color: black;
+  }
+}
+
+.verify {
+  background-color: darkcyan;
+  width: 120px;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 30px;
+  left: 30px;
+  position: fixed;
+  padding: 15px;
+  span {
+    color: #fff;
+    margin-bottom: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+  }
+  a {
+    width: 60%;
+  }
+}
+
+.hidden-link {
+  display: none;
+  background-color: blanchedalmond;
+  text-align: center;
+  width: 24%;
+  height: 70px;
+  margin: 0 38% 50px 38%;
+  border-radius: 3px;
+  .verifyDelete {
+    padding-top: 3px;
+    font-size: 22px;
+    &__text {
+      color: red;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+}
+
