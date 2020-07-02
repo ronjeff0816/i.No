@@ -12,6 +12,7 @@ class ShopsController < ApplicationController
     @shop = Shop.all
     random = Shop.all.shuffle
     @pickupShops = random.take(4)
+    @shops = Shop.all.includes(:user)
   end
 
   def new
@@ -57,6 +58,20 @@ class ShopsController < ApplicationController
       render :show
     end
   end
+
+  def favorites
+    @shops = current_user.favorites_shops.includes(:user).recent
+  end
+
+
+  # def index
+  #     @boards = Board.all.includes(:user).recent
+  # end
+
+  # def bookmarks
+  #     @boards = current_user.bookmark_boards.includes(:user).recent
+  # end
+
   # private
 
   # def set_user
