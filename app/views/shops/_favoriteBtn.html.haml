@@ -1,0 +1,17 @@
+- if current_user.id == @shop.owner_id
+  -# do nothing
+- else 
+  - if @shop.favorites.where(user_id: current_user.id).exists? 
+    = link_to shop_favorites_path(@shop.id), method: :delete do
+      .favoriteBtn 
+        .favoriteBtn__text
+          ブックマークから外す
+        .favorite__icon 
+          = icon("fas", "window-close")
+  - else 
+    = link_to shop_favorites_path(@shop.id), method: :post do
+      .favoriteBtn 
+        .favoriteBtn__text
+          ブックマーク登録する
+        .favorite__icon 
+          = icon("fa", "bookmark")
