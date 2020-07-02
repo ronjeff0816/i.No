@@ -5,16 +5,19 @@
         =  link_to root_path do
           = image_tag 'material/icon/logo_transparent.png', class: "appLogo__main"
       .user-navi
-        -if user_signed_in?
-          = link_to "#" do
-            .user-navi__fav
-              = icon("fas", "bookmark")
-              .text お気に入り
-        -else 
-          = link_to new_user_registration_path do
-            .user-navi__new
-              = icon("fas", "user-plus")
-              .text 新規登録
+        -if current_page?(favorites_path)
+          -# Do nothing
+        -else
+          -if user_signed_in?
+            = link_to favorites_path do
+              .user-navi__fav
+                = icon("fas", "bookmark")
+                .text BM一覧
+          -else 
+            = link_to new_user_registration_path do
+              .user-navi__new
+                = icon("fas", "user-plus")
+                .text 新規登録
         -if user_signed_in? 
           = link_to destroy_user_session_path, method: :delete do
             .user-navi__login
@@ -36,15 +39,17 @@
         .search-navi__ageo
           .search-navi__ageo--text Ageo
         .search-navi__town
-          %select.search-navi__town--options
-            %option= "エリアで検索"
-            %option= "上尾下"
-            %option= "上尾宿"
-            %option= "上尾村"
-            %option= "浅間台"
-            %option= "東町"
-            %option= "畔吉"
-            %option= "愛宕"
+          = link_to '#' do
+            .search-navi__town--options
+              エリア一覧で検索
+            -# %option= "エリアで検索"
+            -# %option{:value => 1}= "上尾下"
+            -# %option{:value => 2}= "上尾宿"
+            -# %option{:value => 3}= "上尾村"
+            -# %option{:value => 4}= "浅間台"
+            -# %option{:value => 5}= "東町"
+            -# %option{:value => 6}= "畔吉"
+            -# %option{:value => 7}= "愛宕"
         .search-navi__shop
           %form.search-navi__shop--form
             %input.search-navi__shop--searchBox{ :name => 'Search', :placeholder => '店名・ジャンルから探す'}
