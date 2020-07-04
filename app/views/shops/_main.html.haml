@@ -43,7 +43,7 @@
       .shops-boxes
         - @pickupShops.each do |shop|
           .shops-box
-            = link_to "/shops/#{shop.id}" do
+            = link_to "/shops/#{shop.id}", data: {"turbolinks" => false} do
               .shops-box__pic
                 = image_tag shop.shop_images.first.image.to_s, alt: 'topPage_shopPics', class: 'shop-pic'
               .shops-box__name 

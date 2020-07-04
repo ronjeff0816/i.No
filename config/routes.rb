@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'towns/index'
   get 'favorites/create'
   get 'favorites/destroy'
   devise_for :users

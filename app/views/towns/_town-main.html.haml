@@ -1,0 +1,40 @@
+.towns
+  .town-title
+    エリア別一覧
+  .shops-boxes
+    - a = 1
+    - while a <= 55
+      - match = Shop.where(town_id: a)
+      - match.each do |t|
+        .town-name 
+          = "#{t.town.town_name}"
+          .town-name__content
+            .shops-box
+              = link_to "/shops/#{t.id}", data: {"turbolinks" => false} do
+                .shops-box__pic
+                  = image_tag t.shop_images.first.image.to_s, alt: 'topPage_shopPics', class: 'shop-pic'
+                .shops-box__name 
+                  = "#{t.shop_name}"
+              -if t.condition == 0
+                .shopCondition
+                  .shopCondition__inner
+                    閉店中
+              -elsif t.condition == 1
+                .shopCondition#condition1
+                  .shopCondition__inner#condition1-text
+                    準備中
+              -elsif t.condition == 2
+                .shopCondition#condition2
+                  .shopCondition__inner#condition2-text
+                    まもなく
+                    %p 開店
+              -elsif t.condition == 3
+                .shopCondition#condition3
+                  .shopCondition__inner#condition3-text
+                    営業中
+              -else 
+                .shopCondition#condition4
+                  .shopCondition__inner#condition4-text
+                    まもなく
+                    %p 閉店    
+      - a += 1

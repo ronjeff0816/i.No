@@ -1,5 +1,5 @@
 class Shop < ApplicationRecord
-  belongs_to :user
+  # belongs_to :user
   has_many :favorites, dependent: :destroy
   belongs_to :town
   has_many :shop_images, dependent: :destroy

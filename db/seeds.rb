@@ -1,12 +1,12 @@
-# #User作成
-# 5.times do |u|
-#   User.create!(
-#     name: "test-user#{u + 1}",
-#     email: "test-email#{u + 1}@gmail.com",
-#     password: "pAssWord#{u + 1}00",
-#     owner_password: "Eat75iNo?"
-#   )
-# end
+#User作成
+5.times do |u|
+  User.create!(
+    name: "test-user#{u + 1}",
+    email: "test-email#{u + 1}@gmail.com",
+    password: "passWord#{u + 1}00",
+    owner_password: "Eat75iNo?"
+  )
+end
 
 #Town作成
 Town.create!(town_name: "上尾下")
@@ -67,27 +67,30 @@ Town.create!(town_name: "領家")
 
 # #Shop作成
 # a = rand(1..53)
-# 5.times do |n|
-#   Shop.create!(
-#     shop_name: "test-shop#{n + 1}",
-#     condition: 0,
-#     introduction: "introduction#{n + 1}",
-#     shop_tel: "#{408} - #{a}#{a+4} - #{n + 1}",
-#     town_id: "#{a + n + 1}",
-#     shop_add: "上尾市#{a}-#{a+2}-#{a+3}",
-#     dayoff: "不定期",
-#     corona_twoWays: 1,
-#     corona_twoMeters: 1,
-#     owner_id: "#{n + 1}",
-#     weekday_open: "11:00:00",
-#     weekday_close: "22:00:00",
-#     weekend_open: "10:00:00",
-#     weekend_close: "21:00:00"
-#   )
-# end
+# shop = 
+#   user.each do |n|
+#     Shop.create!(
+#       user: user,
+#       shop_name: "test-shop#{n + 1}",
+#       condition: 0,
+#       introduction: "introduction#{n + 1}",
+#       shop_tel: "#{408} - #{a}#{a+4} - #{n + 1}",
+#       town_id: "#{a + n + 1}",
+#       shop_add: "上尾市#{a}-#{a+2}-#{a+3}",
+#       dayoff: "不定期",
+#       corona_twoWays: 1,
+#       corona_twoMeters: 1,
+#       owner_id: "#{n + 1}",
+#       weekday_open: "11:00:00",
+#       weekday_close: "22:00:00",
+#       weekend_open: "10:00:00",
+#       weekend_close: "21:00:00"
+#     )
+#     - n += 1
+#   end
 
 # #ShopImage作成
-# 5.times do |i|
+# shop.each do |i|
 #   ShopImage.create!(
 #    shop_id: "#{i + 1}",
 #    image: File.open("./app/assets/images/test/testshop#{i + 1}.jpeg")

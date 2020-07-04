@@ -1,7 +1,8 @@
 class FavoritesController < ApplicationController
 
   def index
-    @favorites = current_user.favorite_shops.includes(:user)
+    @favorites = current_user.favorite_shops
+    # .includes(:user)
   end
 
   def create
