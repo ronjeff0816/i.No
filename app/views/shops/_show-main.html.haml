@@ -1,0 +1,128 @@
+.show 
+  .show__shop_name
+    = "#{@shop.shop_name}"
+  .show__main
+    .show__main--pic
+      = image_tag @shop.shop_images.first.image.to_s, class: "shop-pic"
+      -if @shop.condition == 0
+        .shopCondition
+          .shopCondition__inner
+            閉店中
+      -elsif @shop.condition == 1
+        .shopCondition#condition1
+          .shopCondition__inner#condition1-text
+            準備中
+      -elsif @shop.condition == 2
+        .shopCondition#condition2
+          .shopCondition__inner#condition2-text
+            まもなく開店
+      -elsif @shop.condition == 3
+        .shopCondition#condition3
+          .shopCondition__inner#condition3-text
+            営業中
+      -else 
+        .shopCondition#condition4
+          .shopCondition__inner#condition4-text
+            まもなく閉店
+    .show__main--info
+      .info-title
+        = "上尾市#{@shop.town.town_name}"
+      .info-text
+        .info-text__main
+          電話番号 :
+          .info-text__main--data
+            = "#{@shop.shop_tel}"
+        .info-text__main#flex
+          住所 :
+          .info-text__main--data#data
+            = "#{@shop.shop_add}"
+        .info-text__main
+          平日の営業時間 :
+          .info-text__main--data
+            = "#{@shop.weekday_open.strftime('%H:%M')} ~ #{@shop.weekday_close.strftime('%H:%M')}"
+        .info-text__main
+          週末の営業時間 :
+          .info-text__main--data
+            = "#{@shop.weekend_open.strftime('%H:%M')} ~ #{@shop.weekend_close.strftime('%H:%M')}"
+        .info-text__main
+          店休日 :
+          .info-text__main--data
+            = "#{@shop.dayoff}"
+      .info-corona 
+        -if @shop.corona_twoWays == true
+          = image_tag 'material/corona/kanki.png', alt: 'twoWays-icon', class: 'icon'
+        -if @shop.corona_twoMeters == true
+          = image_tag 'material/corona/seats.png', alt: 'twoMeter-icon', class: 'icon'
+        -if @shop.corona_partition == true
+          = image_tag 'material/corona/partition.png', alt: 'partition-icon', class: 'icon'
+        -if @shop.corona_disinfect == true
+          = image_tag 'material/corona/spray.png', alt: 'disinfect-icon', class: 'icon'
+        -if @shop.corona_mask == true
+          = image_tag 'material/corona/mask.png', alt: 'mask-icon', class: 'icon'
+        -if @shop.corona_temperature == true
+          = image_tag 'material/corona/temperature.png', alt: 'temperature-icon', class: 'icon'
+        -if @shop.corona_distance == true
+          = image_tag 'material/corona/workerDistance.png', alt: 'distance-icon', class: 'icon'
+        -if @shop.corona_customerDisinfect == true
+          = image_tag 'material/corona/customerDisinfect.png', alt: 'customerDisinfect-icon', class: 'icon'
+        -if @shop.corona_customerDistance == true
+          = image_tag 'material/corona/waiting.png', alt: 'customerDistance-icon', class: 'icon'
+        -if @shop.corona_exit == true
+          = image_tag 'material/corona/cough.png', alt: 'exit-icon', class: 'icon'
+  .show__explain
+    .show__explain--title
+      コロナ対策のアイコン説明
+    .show__explain--text
+      = image_tag 'material/corona/kanki.png', alt: 'twoWays-icon', class: 'icon'
+      .explain
+        当店は二方向で換気をしています
+    .show__explain--text
+      = image_tag 'material/corona/seats.png', alt: 'twoMeter-icon', class: 'icon'
+      .explain
+        当店は座席に間隔を置いています / 席を減らしています
+    .show__explain--text
+      = image_tag 'material/corona/partition.png', alt: 'partition-icon', class: 'icon'
+      .explain
+        当店は仕切などを設置して営業しています
+    .show__explain--text
+      = image_tag 'material/corona/spray.png', alt: 'disinfect-icon', class: 'icon'
+      .explain
+        当店は共通部分(例:ドアノブ)の消毒を定期的に行っております
+    .show__explain--text
+      = image_tag 'material/corona/mask.png', alt: 'mask-icon', class: 'icon'
+      .explain
+        当店はスタッフのマスク着用を義務化しています
+    .show__explain--text
+      = image_tag 'material/corona/temperature.png', alt: 'temperature-icon', class: 'icon'
+      .explain
+        当店はスタッフの健康管理・検温を徹底しています
+    .show__explain--text
+      = image_tag 'material/corona/workerDistance.png', alt: 'distance-icon', class: 'icon'
+      .explain
+        当店のスタッフ間ではいつもより距離を取るように心掛けています
+    .show__explain--text
+      = image_tag 'material/corona/customerDisinfect.png', alt: 'customerDisinfect-icon', class: 'icon'
+      .explain
+        当店は入店時にお客様に消毒をお願いしています
+    .show__explain--text
+      = image_tag 'material/corona/waiting.png', alt: 'customerDistance-icon', class: 'icon'
+      .explain
+        当店はお客様がお待ちの際にもグループ様ごとに距離を取るようお願いしています
+    .show__explain--text
+      = image_tag 'material/corona/cough.png', alt: 'exit-icon', class: 'icon'
+      .explain
+        当店は体調不良だったり、咳がひどいお客様にはお帰りいただく場合がございます
+  -if user_signed_in? && @shop.owner_id == current_user.id
+    = link_to edit_shop_path, data: {"turbolinks" => false} do
+      .show__editBtn
+        .show__editBtn--text
+          情報を編集
+    .show__editBtn#DeleteBtn
+      .show__editBtn--text#DeleteText
+        店舗を削除
+    .hidden-link
+      .verifyDelete
+        本当に削除しますか?
+      = link_to shop_path, method: :delete do
+        .verifyDelete__text
+          削除

@@ -4,7 +4,7 @@
 }
 
 .header {
-  height: 450px;
+  height: 100%;
   width: 100%;
   &__main {
     height: 340px;
@@ -110,12 +110,17 @@
         }
       }
       &__town {
+        background: linear-gradient(#66cccc, #009999);
         width: 27%;
         height: 60px;
+        text-align: center;
         &--options {
+          font-size: 20px;
+          color: white;
           height: 100%;
           width: 100%;
           padding-left: 10px;
+          padding-top: 15px;
         }
       }
       &__shop {

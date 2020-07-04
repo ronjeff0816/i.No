@@ -1,0 +1,154 @@
+.shop-new 
+  = form_with model: @shop, local: true do |f|
+    .shop-new__title
+      店舗を登録
+    .shop-new__general
+      .shop-new__general--upper
+        基本情報
+      .shop-new__general--lower
+        .shop_new
+          .label
+            = f.label :店舗名
+          .must        
+            必須
+        %p
+          = f.text_field :shop_name, class: 'enter', type: "text", required: "required", placeholder: '店舗名を入力(40字以内)', maxlength: "40"
+        .label
+          = f.label :ジャンル
+        %p
+          = f.text_field :introduction, class: 'enter', id: 'introduction-enter', type: "text", placeholder: '料理のジャンル （50字以内）', maxlength: "50"
+        .label
+          = f.label :電話番号
+        %p
+          = f.text_field :shop_tel, class: 'enter', type: "text", placeholder: '電話番号を入力(複数可)', maxlength: "40"
+        .shop_new
+          .label
+            = f.label :住所
+          .must
+            必須
+        %p
+          = f.select :town_id, [["町域を選択", 0],["上尾下", 1],["上尾宿", 2],["上尾村",3],["浅間台",4],["東町",5],["畔吉",6],["愛宕",7],["泉台",8],["壱丁目",9],["井戸木",10],["今泉",11],["上野",12],["上野本郷",13],["大谷本郷",14],["柏座",15],["春日",16],["上",17],["上町",18],["上平中央",19],["川",20],["瓦葺",21],["久保",22],["小泉",23],["小敷谷",24],["五番町",25],["栄町",26],["地頭方",27],["須ケ谷",28],["菅谷",29],["堤崎",30],["戸崎",31],["中新井",32],["仲町",33],["中妻",34],["中分",35],["西貝塚",36],["錦町",37],["西宮下",38],["西門前",39],["原市",40],["原市北",41],["原市中",42],["原新町",43],["日の出",44],["平方",45],["平方領々家",46],["平塚",47],["藤波",48],["富士見",49],["二ツ宮",50],["弁財",51],["本町",52],["緑丘",53],["南",54],["宮本町",55],["向山",56],["谷津",57],["領家",58]], class: 'town', type: "integer", required: "required" 
+          = f.text_field :shop_add, class: 'enter', type: "text", required: "required", placeholder: '住所を入力', maxlength: "40"
+    .shop-new__image
+      .shop-new__image--upper
+        店舗画像
+        .must1 5枚必須
+      .shop-new__image--lower
+        = f.fields_for :shop_images, @shop.shop_images.build do |img|
+          .box
+            .picNum
+              画像１
+            .label
+              = f.label :image do
+                .camera
+                  = icon('fa', 'camera-retro')
+                  =img.file_field :image, type: 'file', required: "required", name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image1'
+                  %img#preview1
+          .box
+            .picNum
+              画像 2
+            .label
+              = f.label :image do
+                .camera
+                  = icon('fa', 'camera-retro')
+                  =img.file_field :image, type: 'file', required: "required", name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image2'
+                  %img#preview2
+          .box
+            .picNum
+              画像 3
+            .label
+              = f.label :image do
+                .camera
+                  = icon('fa', 'camera-retro')
+                  =img.file_field :image, type: 'file', required: "required", name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image3'
+                  %img#preview3
+          .box
+            .picNum
+              画像 4
+            .label
+              = f.label :image do
+                .camera
+                  = icon('fa', 'camera-retro')
+                  =img.file_field :image, type: 'file', required: "required", name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image4'
+                  %img#preview4
+          .box
+            .picNum
+              画像 5
+            .label
+              = f.label :image do
+                .camera
+                  = icon('fa', 'camera-retro')
+                  =img.file_field :image, type: 'file', required: "required", name: "shop[shop_images_attributes][][image]", class:"img-file", id: 'image5'
+                  %img#preview5
+    .shop-new__hours
+      .shop-new__hours--upper
+        営業時間
+      .shop-new__hours--lower
+        平日の営業
+        .operating-hours
+          .label
+            = f.label :開店時間
+          %p
+            = f.time_select :weekday_open,{:default => {:hour => '11', :minute => '00'}}, class: 'time', type: "time"
+          .label
+            = f.label :閉店時間
+          %p
+            = f.time_select :weekday_close,{:default => {:hour => '22', :minute => '00'}}, class: 'time', type: "time"
+        #forWeekends 休日の営業
+        .operating-hours
+          .label
+            = f.label :開店時間
+          %p
+            = f.time_select :weekend_open,{:default => {:hour => '10', :minute => '00'}}, class: 'time', type: "time"
+          .label
+            = f.label :閉店時間
+          %p
+            = f.time_select :weekend_close,{:default => {:hour => '21', :minute => '00'}}, class: 'time', type: "time"
+        .operating-hours#day_off
+          .label
+            = f.label :休日
+          %p
+            = f.text_field :dayoff, class: 'dayoff', type: "text", placeholder: '定期店休日などを入力(30字以内)', maxlength: "30"
+        .shop-condition
+          .label
+            = f.label :営業状況
+          %p
+            = f.select :condition, [["閉店中", 0],["準備中", 1],["まもなく開店", 2],["現在営業中",3],["まもなく閉店",4]], class: 'condition', type: "integer"
+    .shop-new__corona
+      .shop-new__corona--upper
+        コロナ対策
+        %span (当てはまるものにチェックをしてください)
+      .shop-new__corona--lower
+        .corona-checkbox
+          = f.check_box :corona_twoWays, class: 'check'
+          = f.label :corona_twoWays, '当店は二方向で換気をしています', class: 'corona-label'
+        .corona-checkbox
+          = f.check_box :corona_twoMeters, class: 'check'
+          = f.label :corona_twoMeters, '当店は座席に間隔を置いています / 席を減らしています', class: 'corona-label'
+        .corona-checkbox
+          = f.check_box :corona_partition, class: 'check'
+          = f.label :corona_partition, '当店は仕切などを設置して営業しています', class: 'corona-label'
+        .corona-checkbox
+          = f.check_box :corona_disinfect, class: 'check'
+          = f.label :corona_disinfect, '当店は共通部分(例:ドアノブ)の消毒を定期的に行っております', class: 'corona-label'
+        .corona-checkbox
+          = f.check_box :corona_mask, class: 'check'
+          = f.label :corona_mask, '当店はスタッフのマスク着用を義務化しています', class: 'corona-label'
+        .corona-checkbox
+          = f.check_box :corona_temperature, class: 'check'
+          = f.label :corona_temperature, '当店はスタッフの健康管理・検温を徹底しています', class: 'corona-label'
+        .corona-checkbox
+          = f.check_box :corona_distance, class: 'check'
+          = f.label :corona_distance, '当店のスタッフ間ではいつもより距離を取るように心掛けています', class: 'corona-label'
+        .corona-checkbox
+          = f.check_box :corona_customerDisinfect, class: 'check'
+          = f.label :corona_customerDisinfect, '当店は入店時にお客様に消毒をお願いしています', class: 'corona-label'
+        .corona-checkbox
+          = f.check_box :corona_customerDistance, class: 'check'
+          = f.label :corona_customerDistance, '当店はお客様がウェイティングの際にもグループ様ごとに距離を取るようお願いしています', class: 'corona-label'
+        .corona-checkbox
+          = f.check_box :corona_exit, class: 'check'
+          = f.label :corona_exit, '当店は入店後に体調が悪化したり、咳がひどいお客様にはお帰りいただく場合がございます', class: 'corona-label'
+    .shop-new__submit
+      .shop-new__submit--btn
+        = f.submit "登録する",class: "btn"
