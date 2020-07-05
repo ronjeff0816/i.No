@@ -4,6 +4,9 @@
   .show__main
     .show__main--pic
       = image_tag @shop.shop_images.first.image.to_s, class: "shop-pic"
+      .small-pics
+        - @shop.shop_images.each do |img|
+          = image_tag img.image.to_s, class: "small-pics__five"
       -if @shop.condition == 0
         .shopCondition
           .shopCondition__inner
@@ -29,12 +32,16 @@
         = "上尾市#{@shop.town.town_name}"
       .info-text
         .info-text__main
+          ジャンル :
+          .info-text__main--data
+            = "#{@shop.introduction}"
+        .info-text__main
           電話番号 :
           .info-text__main--data
             = "#{@shop.shop_tel}"
-        .info-text__main#flex
+        .info-text__main
           住所 :
-          .info-text__main--data#data
+          .info-text__main--data
             = "#{@shop.shop_add}"
         .info-text__main
           平日の営業時間 :
