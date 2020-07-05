@@ -60,11 +60,12 @@ https://i-no.herokuapp.com/
 ### Users Table
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, unique: true|
-|email|string|null: false, unique: true|
-|password|string|null: false|
+|name|string|null: false|
+|email|string|null: false, default: ""|
+|encrypted_password|string|null: false, default: ""|
 |owner_password|string|------|
 #### Association
+- has_many :shops, dependent: :destroy
 - has_many :favorites, dependent: :destroy
 - has_many :favorite_shops, through: :favorites, source: :shop
 
@@ -107,6 +108,7 @@ https://i-no.herokuapp.com/
 |corona_exit|boolean|------|
 #### Association
 - belongs_to :town
+- has_many :favorites, dependent: :destroy
 - has_many :shop_images, dependent: :destroy
 - accepts_nested_attributes_for :shop_images, allow_destroy: true
 
@@ -114,10 +116,11 @@ https://i-no.herokuapp.com/
 ### Shop_images Table
 |Column|Type|Options|
 |------|----|-------|
-|image|string|null: false, foreign_key: true|
+|image|string|null: false|
 |shop|references|null: false, foreign_key: true|
 #### Association
 - belongs_to :shop
+- mount_uploader :image, ImageUploader
 
 
 ### Towns Table
