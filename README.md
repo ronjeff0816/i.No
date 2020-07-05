@@ -144,8 +144,8 @@ https://i-no.herokuapp.com/
 
 ### 店舗詳細ページ（Shop Details Page）
 <p align="center">
-  <img src="https://i.gyazo.com/de6f3ecd1d0157555ececc0cfa7f88d1.png" width=48%>  
-  <img src="https://i.gyazo.com/7119fea85d5b01e08a0c961bbd81edf0.png" width=48%> 
+  <img src="https://i.gyazo.com/88e7221480a0d0de7b31dc65076dc708.png" width=48%>  
+  <img src="https://i.gyazo.com/59bbe88431b5fa25dfb3713a33ec34fa.png" width=48%> 
 </p> 
 <br>
 <br>
