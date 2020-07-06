@@ -18,7 +18,8 @@
       -elsif @shop.condition == 2
         .shopCondition#condition2
           .shopCondition__inner#condition2-text
-            まもなく開店
+            まもなく
+            %p 開店
       -elsif @shop.condition == 3
         .shopCondition#condition3
           .shopCondition__inner#condition3-text
@@ -26,7 +27,8 @@
       -else 
         .shopCondition#condition4
           .shopCondition__inner#condition4-text
-            まもなく閉店
+            まもなく
+            %p 閉店
     .show__main--info
       .info-title
         = "上尾市#{@shop.town.town_name}"
