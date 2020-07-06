@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: ronjeff0816
+  api_key: '558477874689428'
+  api_secret: IA26W2Z9gbwzI0nnUQMMmHL7kqo
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: ronjeff0816
+  api_key: '558477874689428'
+  api_secret: IA26W2Z9gbwzI0nnUQMMmHL7kqo
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: ronjeff0816
+  api_key: '558477874689428'
+  api_secret: IA26W2Z9gbwzI0nnUQMMmHL7kqo
+  enhance_image_tag: true
+  static_file_support: false

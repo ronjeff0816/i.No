@@ -23,6 +23,7 @@ class ShopsController < ApplicationController
   def create
     @shop = Shop.new(shop_params)
     if @shop.save
+      @shop.reload
       @shop.update(owner_id: current_user.id)
       redirect_to root_path
     else
