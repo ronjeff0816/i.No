@@ -1,41 +1,32 @@
 # README
 
 # i.No(アイテンノ) 〜営業中を検索〜
+--上尾市限定版--
 
-i.Noは飲食店の営業状況を検索できるアプリです。
+i.Noは飲食店の営業状況を検索できるアプリです。（A real-time open restaurant finder App）
+<br><br>
+お店まで行ったけど、時短営業でもう閉まっていた...なんてことここ最近ありませんか？
+「アプリで調べたのに、表示されていた営業時間と合っていない」など無駄な外出は体験したかと思います。
+コロナウィルス感染拡大でこのような事態になったのは仕方がないことではありますが、
+そんなコロナの影響で飲食店の営業状況が日々変化する時期だからこそ、i.Noは需要があるアプリになります！
+リアルタイムに営業状況を確認できることに加え、各飲食店の感染防止対策を一目で確認できるアプリです！
 <br>
-A real-time open restaurant finder App
-<br>
-<br>
-
-## 機能 (Functions)
-
-- 機能１
-- ( )
-<p align="center">
-  <img src="" width=70%> 
-</p> 
 <br>
 
-- 機能２
-- ( )
-<p align="center">
-  <img src="" width=70%> 
-</p> 
+## 機能一覧 (Functions)
+- ユーザー登録機能
+- ユーザー情報変数機能
+- ログイン・ログアウト機能
+- ピックアップ店舗表示一覧
+- エリア別検索機能 
+- 店舗詳細表示機能
+- ブックマーク・アンブックマーク機能
+- ブックマーク一覧検索機能
+### + 店舗経営者向け機能
+- 店舗登録機能
+- 店舗情報編集機能
+- 店舗削除機能
 <br>
-
-- 機能３
-- ( )
-<p align="center">
-  <img src="" width=70%> 
-</p> 
-<br>
-
-- 機能４
-- ( )
-<p align="center">
-  <img src="" width=70%> 
-</p> 
 <br>
 
 ## URL
@@ -43,6 +34,13 @@ A real-time open restaurant finder App
 https://i-no.herokuapp.com/ 
 <br>
 <br>
+
+## Githubリポジトリ
+
+https://github.com/ronjeff0816/i.No  
+<br>
+<br>
+
 
 ## 💬 Usage
 
@@ -54,7 +52,7 @@ https://i-no.herokuapp.com/
 
 ### ER図
 <p align="center">
-  <img src="" width=80%>  
+  <img src="https://i.gyazo.com/4ed2337f0c29457a507ca04195701625.png" width=80%>  
 </p>
 
 ### Users Table
@@ -157,17 +155,21 @@ https://i-no.herokuapp.com/
 ## 課題や今後実装したい機能
 
 ### 課題 (Problems)
-- 課題
-- ()
+- 店主の観点から考え、やはりすぐ営業状況を更新できるように、スマートフォンアプリケーションにしたい
+- 店舗側が営業状況を更新し忘れが生じる可能性が高い
 
-### 追加実装 (Adding features)
-- 追加機能
-- ()
+### 追加したい機能 (Adding features)
+- 店名での検索機能(実装中)
+- お店の登録住所を元に、そのままマップアプリケーションを開けるような機能
+- １時間ごとにポップアップ通信で営業状況をすぐ選択し、編集できる機能
 
 ## 開発環境 (Made with)
 - Mac OS X 10.13.6(High Sierra)
 - Visual Studio Code ver. Version 1.43.2
 - Terminal Version 2.8.3 (404.1)
+- MySQL
+- Github
+- Heroku
 - HTML
 - CSS
 - Haml
@@ -177,7 +179,13 @@ https://i-no.herokuapp.com/
 - JavaScript
 - jQuery
 
+## 開発期間と平均作業時間
+
+- 開発期間：6/16~7/5 (20日間) 
+- 1日あたりの平均作業時間：6時間
+
+
 ## 筆者 (Author)
 - [Twitter](https://twitter.com/ronjeff7)
-- [Qitta](https://twitter.com/ronjeff7)
+
 
