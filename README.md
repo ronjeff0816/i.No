@@ -184,8 +184,8 @@ https://github.com/ronjeff0816/i.No
 - 開発期間：6/16~7/5 (20日間) 
 - 1日あたりの平均作業時間：6時間
 
-
+<!-- 
 ## 筆者 (Author)
-- [Twitter](https://twitter.com/ronjeff7)
+- [Twitter](https://twitter.com/ronjeff7) -->
 
 
